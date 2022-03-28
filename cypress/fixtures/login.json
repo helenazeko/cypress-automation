@@ -1,0 +1,30 @@
+{
+  "valid": {
+    "id": "helena13",
+    "pwd": "helena",
+    "email": "h24@gmail.com"
+  },
+  "invalid_username": {
+    "id": "helena13131313",
+    "pwd": "helena13"
+  },
+  "invalid_password": {
+    "id": "helena13",
+    "pwd": "helena1313"
+  },
+  "invalid_email": {
+    "id": "helena12",
+    "pwd": "helena13",
+    "email": "helena@mail"
+  },
+  "not_activated": {
+    "id": "some123",
+    "pwd": "some123",
+    "email": "some123@mail.com"
+  },
+  "not_exist": {
+    "id": "slash",
+    "pwd": "pwd",
+    "email": "vnwkj2133@m.com"
+  }
+}

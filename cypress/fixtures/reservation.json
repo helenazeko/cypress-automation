@@ -1,0 +1,22 @@
+{
+    "prikazivanje": {
+        "first": " DVORANA: A1 ,TIP: 3D ,DATUM: 2021-02-23 ,VRIJEME: 22:33:00 ",
+        "second" : " DVORANA: A2 ,TIP: 4D ,DATUM: 2021-02-17 ,VRIJEME: 22:52:00 "
+    },
+
+    "podaci": {
+        "name": "Helena", 
+        "lastname": "Zeko",
+        "pnum": "063000444"
+    },
+
+    "prikaz": {
+        "id" : "58"
+    },
+    "prikaz1": {
+        "id" : "59"
+    }
+    
+
+
+}
