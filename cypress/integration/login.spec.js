@@ -11,21 +11,7 @@ describe('Login Success Test', () => {
     })
 
     it('Login with previously manually registered user credentials', function () {
-        const email = this.login['valid'].email;
-        const password = this.login['valid'].pwd;
-
-        cy.get(LoginPage.selectors.EMAIL)
-            .type(email)
-            .get(LoginPage.selectors.PASSWORD)
-            .type(password)
-            .get(LoginPage.selectors.SUBMIT_BUTTON)
-            .contains(LoginPage.selectors.SUBMIT_TEXT)
-            .click({ force: true })
-            .wait(2000);
-
-        cy.url().should('contain', 'http://localhost/kino/index.php');
-        cy.get('.nav-link').contains('PREGLED REZERVACIJE').should('be.visible')
-        cy.get('.nav-link').contains('ODJAVA').should('be.visible')
+        cy.login()
             
     });
 })
@@ -38,18 +24,7 @@ describe('Logout Test', () => {
         })
 
     it('Logout properly', function () {
-        const email = this.login['valid'].email;
-        const password = this.login['valid'].pwd;
-
-
-        cy.get(LoginPage.selectors.EMAIL)
-            .type(email)
-            .get(LoginPage.selectors.PASSWORD)
-            .type(password)
-            .get(LoginPage.selectors.SUBMIT_BUTTON)
-            .contains(LoginPage.selectors.SUBMIT_TEXT)
-            .click({ force: true })
-            .wait(2000);
+        cy.login()
 
         
         cy.get('.nav-link').contains('ODJAVA')

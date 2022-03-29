@@ -40,22 +40,7 @@ describe('Movie Reservation after Login', function ()  {
     })
 
     it('Login, show movies and reservation ', function () {
-        const email = this.login['valid'].email;
-        const password = this.login['valid'].pwd;
-
-        cy.get(LoginPage.selectors.EMAIL)
-            .type(email)
-            .get(LoginPage.selectors.PASSWORD)
-            .type(password)
-            .get(LoginPage.selectors.SUBMIT_BUTTON)
-            .contains(LoginPage.selectors.SUBMIT_TEXT)
-            .click({ force: true })
-            .wait(2000);
-
-        cy.url().should('contain', 'http://localhost/kino/index.php');
-        cy.get('.nav-link').contains('PREGLED REZERVACIJE').should('be.visible')
-        cy.get('.nav-link').contains('ODJAVA').should('be.visible')
-    
+        cy.login()
     
         cy.get('.book-btn').contains('Pogledaj više filmova').click()
 

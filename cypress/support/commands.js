@@ -1,21 +1,25 @@
 import Registration from "../page-objects/pages/Registration"
+import LoginPage from "../page-objects/pages/LoginPage"
 
-Cypress.Commands.add('login', () => {
-	const email = Cypress.env('user').email;
-	const password = Cypress.env('user').pwd;
 
-    cy.request({
-		method: 'POST',
-		url: 'http://localhost/kino/login.php',
-		form: true,
-		body: {
-			email: email,
-			passwd: password,
-		},
-	}).then($response => {
-		expect($response.status).to.be.eq(200);
-		cy.visit('http://localhost/kino/login.php', { followRedirects: true });
-	});
+Cypress.Commands.add('login', function () {
+	const email = this.login['valid'].email;
+	const password = this.login['valid'].pwd;
+
+	
+        cy.get(LoginPage.selectors.EMAIL)
+            .type(email)
+            .get(LoginPage.selectors.PASSWORD)
+            .type(password)
+            .get(LoginPage.selectors.SUBMIT_BUTTON)
+            .contains(LoginPage.selectors.SUBMIT_TEXT)
+            .click({ force: true })
+            .wait(2000);
+
+        cy.url().should('contain', 'http://localhost/kino/index.php');
+        cy.get('.nav-link').contains('PREGLED REZERVACIJE').should('be.visible')
+        cy.get('.nav-link').contains('ODJAVA').should('be.visible')
+
 });
 
 Cypress.Commands.add('fillRegisterMandatoryFields',
