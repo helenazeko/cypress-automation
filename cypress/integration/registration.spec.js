@@ -49,7 +49,7 @@ describe('User Registration Process', () => {
 
 			const password = this.users['valid_password'].allowed
 			const email = this.users['invalid_email'].email_taken
-h
+
 			cy.fillRegisterMandatoryFields(name, lastname, email, password)
 			cy.registerFieldsValidation(
 				Registration.selectors.VALIDATION_MSG,
