@@ -1,6 +1,6 @@
 describe('Reservation  review', function () {
 	before(function () {
-		cy.visit('http://localhost/kino/')
+		cy.visit('kino')
 		cy.contains('PRIJAVA').click()
 		cy.fixture('login.json').as('login')
 		cy.fixture('reservation.json').as('reservation')

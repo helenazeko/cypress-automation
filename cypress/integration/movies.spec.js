@@ -1,7 +1,7 @@
 
 describe('Movie Review', () => {
     beforeEach(function () {
-        cy.visit('http://localhost/kino/')
+        cy.visit('kino')
         cy.contains('FILMOVI').click()
         cy.fixture('review.json').as('review')
     })

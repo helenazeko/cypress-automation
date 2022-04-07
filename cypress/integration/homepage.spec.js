@@ -1,6 +1,6 @@
 describe('Homepage review', function () {
 	beforeEach(function () {
-		cy.visit('http://localhost/kino/')
+		cy.visit('kino')
 		cy.fixture('login.json').as('login')
 	})
 

@@ -2,7 +2,7 @@ import { LoginPage } from '../support/movie_pages'
 
 describe('Login Success Test', () => {
 	before(function () {
-		cy.visit('http://localhost/kino/')
+		cy.visit('kino')
 		cy.contains('PRIJAVA').click()
 		cy.fixture('login.json').as('login')
 	})
