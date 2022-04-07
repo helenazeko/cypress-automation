@@ -4,7 +4,7 @@ import { Registration } from '../support/movie_pages'
 describe('User Registration Process', () => {
 	describe('User Registration Valid Scenario', () => {
 		before(function () {
-			cy.visit('http://localhost/kino/')
+			cy.visit('kino')
 			cy.contains('PRIJAVA').click()
 			cy.fixture('registration.json').as('users')
 		})

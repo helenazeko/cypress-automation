@@ -3,7 +3,7 @@ import { SearchForm } from '../support/movie_pages'
 describe('Search feature', () => {
 	describe('Search Movies using Search Form on Home Page with default options', () => {
 		beforeEach(function () {
-			cy.visit('http://localhost/kino/')
+			cy.visit('kino')
 			cy.fixture('search.json').as('search')
 		})
 

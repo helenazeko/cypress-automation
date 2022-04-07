@@ -2,7 +2,7 @@ import { LoginPage } from '../support/movie_pages'
 
 describe('Movie Reservation before Login', function () {
 	before(function () {
-		cy.visit('http://localhost/kino/')
+		cy.visit('kino')
 		cy.contains('FILMOVI').click()
 		cy.fixture('review.json').as('review')
 	})
